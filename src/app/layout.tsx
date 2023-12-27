@@ -1,22 +1,27 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import './globals.css'
+import type { Metadata } from "next";
+import { Josefin_Sans } from "next/font/google";
+import WagmiProvider from "@/components/WagmiProvider";
+import { NextUiProvider } from "@/components/NextUiProvider";
+import { OrbisProvider } from "@/context/OrbisContext";
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] })
+const josefin = Josefin_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'My Big Fans',
-  description: 'Your Exclusive Fans Ecosystem.',
-}
+  title: "GalaKlub - Limited Exclusive Artist Access & Unique Fan Badges ",
+  description: "Unlock the ultimate fan experience with GalaKlub's limited edition passes! Connect with your favorite artists like never before through exclusive live streams, chat groups, and feed boards. Flaunt your unique fan badge, handpicked by the artists, and be part of a privileged community of enthusiasts. Seize your chance for unparalleled access and community activities - limited spots available!",
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={josefin.className}>
+        <WagmiProvider>
+          <OrbisProvider>
+            <NextUiProvider>{children}</NextUiProvider>
+          </OrbisProvider>
+        </WagmiProvider>
+      </body>
     </html>
-  )
+  );
 }
