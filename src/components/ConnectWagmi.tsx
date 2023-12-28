@@ -18,9 +18,8 @@ const ConnectWagmi = () => {
   const { chain } = useNetwork();
   const { chains, isLoading: isSwitchNetworkLoading, switchNetwork } = useSwitchNetwork();
   const { disconnect } = useDisconnect();
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
   const { userData, connectOrbis, logoutOrbis, isUserConnected } = useOrbis();
-  console.log("userData: ", userData);
 
   useEffect(() => {
     if (address || !isConnected) {
@@ -49,7 +48,7 @@ const ConnectWagmi = () => {
   }
 
   return isConnected ? (
-    <Dropdown placement="bottom-end">
+    <Dropdown placement="bottom-start">
       <DropdownTrigger>
         <div className="flex items-center gap-4 h-10 cursor-pointer select-none">
           <OrbisProfilePicture size={40} quality={20} />

@@ -19,6 +19,7 @@ const OrbisProfilePicture: React.FC<OrbisProfilePictureProps> = ({ size, quality
       height={size}
       quality={quality ? quality : 70}
       className="rounded-full"
+      priority
     />
   ) : userData && userData.profile && !userData.profile.pfp ? (
     <ProfileImageIcon size={size} fill="#00000025" />

@@ -22,8 +22,8 @@ const TokenGate: React.FC<TokenGateProps> = ({
   lockAddressString,
 }) => {
   const { address, isConnected, connector } = useAccount();
-  const [hash, setHash] = useState("");
-  const [initialLoad, setInitialLoad] = useState(true);
+  const [hash, setHash] = useState<string>("");
+  const [initialLoad, setInitialLoad] = useState<boolean>(true);
 
   useEffect(() => {
     setInitialLoad(false);
@@ -180,24 +180,12 @@ const TokenGate: React.FC<TokenGateProps> = ({
             <p className="text-sm w-full h-1/2 border-b-1 border-gray-400 grid place-items-center">
               Max Member:
             </p>
-            <p className="font-bold w-full h-1/2 flex items-center justify-center gap-1">
-              <span>{totalLockSupply}</span>{" "}
+            <div className="font-bold w-full h-1/2 flex items-center justify-center gap-1">
+              <p>{totalLockSupply}</p>
               <div className="mb-1">
                 <FriendIcon size={25} fill="#111111" />
               </div>
-            </p>
-          </div>
-          {/* LOCK MEMBER */}
-          <div className="w-1/4 h-full border-r-1 border-gray-400">
-            <p className="text-sm w-full h-1/2 border-b-1 border-gray-400 grid place-items-center">
-              Active Member:
-            </p>
-            <p className="font-bold w-full h-1/2 flex items-center justify-center gap-1">
-              <span>{totalLockMember}</span>{" "}
-              <div className="mb-1">
-                <FriendIcon size={25} fill="#111111" />
-              </div>
-            </p>
+            </div>
           </div>
           {/* LOCK EXPIRED DATE */}
           <div className="w-1/4 h-full border-r-1 border-gray-400">
@@ -207,6 +195,13 @@ const TokenGate: React.FC<TokenGateProps> = ({
             <p className="font-bold w-full h-1/2 grid place-items-center">
               {expiredDateInDays} Days
             </p>
+          </div>
+          {/* CREDIT CARD PAYMENT? */}
+          <div className="w-1/4 h-full border-r-1 border-gray-400">
+            <p className="text-sm w-full h-1/2 border-b-1 border-gray-400 grid place-items-center">
+              Credit Card:
+            </p>
+            <p className="font-bold w-full h-1/2 grid place-items-center">None</p>
           </div>
           {/* LOCK PRICE */}
           <div className="w-1/4 h-full border-r-1 border-gray-400">

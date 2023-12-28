@@ -9,6 +9,7 @@ import HomeIcon from "@/assets/HomeIcon";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import OrbisCreatePostModal from "./OrbisCreatePostModal";
+import VerifiedPageHistoryButton from "./VerifiedPageHistoryButton";
 
 const SideNavBarLink = () => {
   const currentPath = usePathname();
@@ -26,7 +27,7 @@ const SideNavBarLink = () => {
           <div className="w-8 h-8 grid place-items-center">
             <HomeIcon size={25} fill="#000000dd" />
           </div>
-          <p className="text-base font-normal mb-[-3px]">Home</p>
+          <p className="text-base font-normal mb-[-3px] select-none">Home</p>
         </Link>
 
         <Link
@@ -40,7 +41,7 @@ const SideNavBarLink = () => {
           <div className="w-8 h-8 grid place-items-center">
             <SearchIcon size={30} fill="#000" />
           </div>
-          <p className="text-base font-normal mb-[-3px]">Explore</p>
+          <p className="text-base font-normal mb-[-3px] select-none">Explore</p>
         </Link>
 
         <Link
@@ -54,7 +55,7 @@ const SideNavBarLink = () => {
           <div className="w-8 h-8 grid place-items-center">
             <BellIcon size={25} fill="#000" />
           </div>
-          <p className="text-base font-normal mb-[-3px]">Notification</p>
+          <p className="text-base font-normal mb-[-3px] select-none">Notification</p>
         </Link>
 
         <Link
@@ -68,7 +69,7 @@ const SideNavBarLink = () => {
           <div className="w-8 h-8 grid place-items-center">
             <FriendIcon size={30} fill="#000" />
           </div>
-          <p className="text-base font-normal mb-[-3px]">Friends</p>
+          <p className="text-base font-normal mb-[-3px] select-none">Friends</p>
         </Link>
 
         <Link
@@ -82,7 +83,7 @@ const SideNavBarLink = () => {
           <div className="w-8 h-8 grid place-items-center">
             <MailIcon size={25} fill="#000" />
           </div>
-          <p className="text-base font-normal mb-[-3px]">Messages</p>
+          <p className="text-base font-normal mb-[-3px] select-none">Messages</p>
         </Link>
 
         <Link
@@ -96,11 +97,14 @@ const SideNavBarLink = () => {
           <div className="w-8 h-8 grid place-items-center">
             <LockIcon size={26} fill="#000" />
           </div>
-          <p className="text-base font-normal mb-[-3px]">My Subscription</p>
+          <p className="text-base font-normal mb-[-3px] select-none">My Subscription</p>
         </Link>
       </div>
 
-      <OrbisCreatePostModal buttonMode/>
+      <div className="flex flex-col items-start justify-start gap-1">
+        <VerifiedPageHistoryButton/>
+        <OrbisCreatePostModal buttonMode/>
+      </div>  
     </div>
   );
 };

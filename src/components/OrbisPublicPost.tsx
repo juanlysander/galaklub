@@ -13,7 +13,6 @@ const OrbisPublicPost = () => {
   useEffect(() => {
     const fetchUserPosts = async () => {
       const posts = await getUserPublicPost();
-      console.log("userPosts: ", posts);
       setUserPosts(posts);
     };
 
@@ -45,14 +44,12 @@ const OrbisPublicPost = () => {
             </div>
             <div className="w-[calc(100%-200px)] flex flex-col items-start justify-start">
               <div className="flex items-center justify-start gap-2">
-                <p className="font-semibold text-base">
-                  <OrbisUserName />
-                </p>
+                <OrbisUserName className="font-semibold text-base" />
                 <div className="w-1 h-1 rounded-full bg-gray-300" />
                 <p className="text-sm text-gray-400">{formatUnixTime(post.timestamp)}</p>
               </div>
               <p className="text-sm">{post.content.body}</p>
-              <OrbisReactionPanel post={post}/>
+              <OrbisReactionPanel post={post} />
             </div>
           </div>
         ))}

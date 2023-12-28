@@ -28,8 +28,7 @@ const MySubscriptionList: React.FC<MySubscriptionListProps> = ({ lockAddress }) 
     functionName: "expirationDuration",
     watch: true,
   });
-  console.log("expiredDate: ", expiredDate);
-  const [initialLoad, setInitialLoad] = useState(true);
+  const [initialLoad, setInitialLoad] = useState<boolean>(true);
 
   useEffect(() => {
     setInitialLoad(false);

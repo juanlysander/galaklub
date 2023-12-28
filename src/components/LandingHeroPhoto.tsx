@@ -10,7 +10,7 @@ import { motion, AnimatePresence, easeInOut } from "framer-motion";
 const imageArray = [zee, yuvia, sinka, tiara];
 
 const LandingHeroPhoto = () => {
-  const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState<number>(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -34,7 +34,8 @@ const LandingHeroPhoto = () => {
             alt="Cover Photo"
             src={imageArray[current]}
             fill
-            quality={60}
+            priority
+            quality={50}
             sizes="720px"
             style={{
               objectFit: "cover",

@@ -25,7 +25,7 @@ const VerifiedCreatorPage = ({ params }: { params: any }) => {
       {/* FILTERBAR */}
       <div className="h-full py-4 px-6 hidden md:block md:w-72 bg-[#efefef] rounded-lg">
         <div className="flex flex-col items-start gap-1">
-          <LockData lockAddress={address} />
+          <LockData lockAddress={address} lockAddressString={address} />
         </div>
       </div>
     </main>

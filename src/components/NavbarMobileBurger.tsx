@@ -15,7 +15,7 @@ const NavbarMobileBurger = () => {
         setOpenBurger(!openBurger);
       }}
     >
-      {openBurger ? <BurgerIcon /> : <CloseIcon />}
+      {openBurger ? <BurgerIcon /> : <CloseIcon size={20} fill="#111111" />}
     </motion.div>
   );
 };

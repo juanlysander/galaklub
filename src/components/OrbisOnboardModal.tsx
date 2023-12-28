@@ -58,7 +58,6 @@ const OrbisOnboardModal: React.FC<OrbisOnboardModalProps> = ({ isOpen }) => {
                     onClick={async () => {
                       const updatedBio = bio === "" ? "-" : bio;
                       const status = await onBoardProfile(name, updatedBio);
-                      console.log('status: ', status);
                     }}
                     className="text-sm py-2 px-4 border-black/70 border-2 rounded-xl"
                   >

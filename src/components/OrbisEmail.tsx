@@ -1,9 +1,9 @@
 "use client";
 import { useOrbis } from "@/hooks/useOrbis";
 import React from "react";
-import OrbisSetEmailModal from "./OrbisSetEmailModal";
 import CloseIcon from "@/assets/CloseIcon";
 import CheckIcon from "@/assets/CheckIcon";
+import { Skeleton } from "@nextui-org/react";
 
 const OrbisEmail = () => {
   const { userData } = useOrbis();
@@ -19,7 +19,7 @@ const OrbisEmail = () => {
       <CloseIcon size={12} fill="#000000" />
     </div>
   ) : (
-    <></>
+    <Skeleton className="w-16 h-4 rounded-full" />
   );
 };
 

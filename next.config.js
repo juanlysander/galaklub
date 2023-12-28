@@ -8,6 +8,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "storage.unlock-protocol.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

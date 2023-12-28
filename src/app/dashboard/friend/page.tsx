@@ -1,12 +1,17 @@
+"use client"
+import FriendSearchSection from "@/components/FriendSearchSection";
 import { NextPage } from "next";
-import React from "react";
+import React, { useState } from "react";
 
 const FriendPage: NextPage = () => {
+  const [searchQuery, setSearchQuery] = useState<string>("");
+  
   return (
     <main className="h-full w-[calc(100%-294px)] gap-[6px] flex items-start justify-start overflow-hidden overflow-y-scroll">
       {/* CONTENT */}
-      <div className="w-[calc(100%-294px)] h-full p-5 flex flex-col bg-[#efefef] rounded-lg">
-        Friend
+      <div className="w-[calc(100%-294px)] h-full flex flex-col gap-[6px] rounded-lg">
+        <FriendSearchSection searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
+        
       </div>
 
       {/* FILTERBAR */}

@@ -38,7 +38,7 @@ const OrbisCreatePostModal: React.FC<OrbisCreatePostModalProps> = ({ buttonMode 
           <div className="w-8 h-8 grid place-items-center">
             <PlusIcon size={25} fill="#111111" strokeWidth="4" />
           </div>
-          <p className="text-base font-normal mb-[-3px]">Create Post</p>
+          <p className="text-base font-normal mb-[-3px] select-none">Create Post</p>
         </button>
       ) : (
         <button

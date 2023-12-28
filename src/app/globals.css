@@ -10,6 +10,15 @@
   display: none;
 }
 
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+}
+
 .glassmorphism {
   background: linear-gradient(135deg, rgba(55, 55, 55, 0.363), rgba(255, 255, 255, 0.1));
   backdrop-filter: blur(10px);
